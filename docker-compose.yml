@@ -1,0 +1,18 @@
+version: '3'
+
+networks:
+  db:
+
+services:
+  postgres:
+    container_name: prm_postgre
+    image: postgres:10.5
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=diver_friend
+      - POSTGRES_USER=diver_friend
+      - POSTGRES_PASSWORD=diver_friend
+      - MAX_CONNECTIONS=300
+    networks:
+      - db
